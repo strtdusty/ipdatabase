@@ -54,7 +54,7 @@ func (p *cmdSearch) Execute(_ context.Context, f *flag.FlagSet,
 	_ ...interface{}) subcommands.ExitStatus {
 	database := Load()
 	searchString := f.Arg(0)
-	if strings.Count(searchString, ".") == 3 && !strings.Contains(searchString, "/32") {
+	if strings.Count(searchString, ".") == 3 && !strings.Contains(searchString, "/") {
 		searchString = searchString + "/32"
 	}
 
