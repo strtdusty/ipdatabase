@@ -41,7 +41,7 @@ func (d DatabaseEntry) Search(searchString string) {
 			d.Print()
 		} else {
 			for j := 0; j < len(d.Labels); j++ {
-				if strings.Contains(d.Labels[j], searchString) {
+				if strings.Contains(strings.ToLower(d.Labels[j]), strings.ToLower(searchString)) {
 					d.Print()
 					break
 				}
